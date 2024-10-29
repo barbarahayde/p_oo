@@ -13,11 +13,14 @@ class Conta:
 
     def deposito(self, valor):
         self.saldo = self.saldo + valor
-        print("Deposito de R${} realizado com sucesso".format(valor))
 
     def saque(self, valor):
         self.saldo = self.saldo - valor
-        print("Saque de R${} realizado com sucesso".format(valor))
+
+    def transferencia(self, valor, destino):
+        self.saque(valor)
+        destino.deposito(valor)
+        print("Transferencia de R${} realizado com sucesso".format(valor))
 
 
 
